@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="formulario.css">
 </head>
 <body>
-    <form action="form.php" method="post" class="card">
+    <form action="formulario.php" method="post" class="card">
 
         <h1>Cadastro</h1>
 		<br>
@@ -24,15 +24,12 @@
 			</label>
 		</div>
 		<br>
-		<div class="senha">
-			<label for="senha">Senha:
-				<input type="password" name="senha" placeholder="Senha">
-			</label>
-		</div>
-		<br>
-			<div><label for="lembrar">Lembrar a Senha?</label>
-				<br><input type="checkbox" name="lembrar" value="s"> Sim
-				<input type="checkbox" name="lembrar" value="n"> Não
+			<div><label for="lembrar">Selecione os seus Equipamentos de Acesso a Internet:</label>
+				<br>
+					<input type="checkbox" name="equipe[0]" value="computador"> Computador
+					<input type="checkbox" name="equipe[1]" value="smart"> Smartphones
+					<input type="checkbox" name="equipe[2]" value="note"> Notebook
+					<input type="checkbox" name="equipe[3]" value="tablet"> Tablet
 			</div>
 		<br>
 			<div>
