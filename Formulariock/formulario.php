@@ -39,5 +39,5 @@ else
 	echo 'Problemas com a Execusão!';
 }
 
-Fecha a conexão BD
+//Fecha a conexão BD
 mysqli_close($conexao);
