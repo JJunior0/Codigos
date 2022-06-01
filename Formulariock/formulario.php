@@ -2,17 +2,24 @@
 
 $nome = $_POST['username'];
 $email = $_POST['e-mail'];
-$senha = $_POST['senha'];
-$lembrar = $_POST['lembrar'];
+$equipe = $_POST['equipe'];
 
-$conexao = mysqli_connect('localhost','root','root','formulario',3306);
+$conexao = mysqli_connect('localhost','root',' ','formulario',3306);
 
 if (!$conexao) 
 {
 	die('Problemas com a conexão!');
 }
 
-$sql = "INSERT INTO formulario VALUES (null,'$nome','$email','$senha','$lembrar');";
+foreach ($equipe as $equipamentos)
+{
+	$msg .= $equipamentos;
+}
+
+echo 'Você tem os seguintes equipamentos'.$equipamentos.;
+
+$sql = "INSERT INTO formulario VALUES (null,'$nome','$email','$equipe');";
+
 
 if($conexao -> query($sql))
 {
