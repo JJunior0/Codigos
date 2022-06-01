@@ -4,11 +4,17 @@ $nome = $_POST['username'];
 $email = $_POST['e-mail'];
 $equipe = $_POST['equipe'];
 
-$conexao = mysqli_connect('localhost','root',' ','formulario',3306);
+$servidor = "localhost";
+$usuario = "root";
+$bdname = "formulario";
+$senha = "";
+$porta = 3306;
+
+$conexao = mysqli_connect($servidor, $usuario, $senha, $bdname, $porta);
 
 if (!$conexao) 
 {
-	die('Problemas com a conexão!');
+	die('Problemas com a conexão!' . mysqli_connect_error());
 }
 
 foreach ($equipe as $equipamentos)
@@ -16,9 +22,9 @@ foreach ($equipe as $equipamentos)
 	$msg .= $equipamentos;
 }
 
-echo 'Você tem os seguintes equipamentos'.$equipamentos.;
+echo 'Você tem os seguintes equipamentos' . $equipamentos .'.';
 
-$sql = "INSERT INTO formulario VALUES (null,'$nome','$email','$equipe');";
+$sql = "INSERT INTO formulario VALUES (null,'$nome','$email','$equipamentos');";
 
 
 if($conexao -> query($sql))
@@ -33,5 +39,5 @@ else
 	echo 'Problemas com a Execusão!';
 }
 
-// Fecha a conexão BD
+Fecha a conexão BD
 mysqli_close($conexao);
