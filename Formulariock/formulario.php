@@ -15,11 +15,12 @@ $conexao = mysqli_connect($servidor, $usuario, $senha, $bdname, $porta);
 if (!$conexao) 
 {
 	die('Problemas com a conexão!' . mysqli_connect_error());
+	echo "Conexão efetuada com sucesso!"
 }
 
 foreach ($equipe as $equipamentos)
 {
-	$msg .= $equipamentos;
+	$msg .= $equipamentos . ", ";
 }
 
 echo 'Você tem os seguintes equipamentos' . $equipamentos .'.';
