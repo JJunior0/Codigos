@@ -19,7 +19,7 @@ if (!$conexao)
 
 foreach ($equipe as $equipamentos)
 {
-	$msg .= $equipamentos;
+	$msg .= $equipamentos . ", ";
 }
 
 echo 'Você tem os seguintes equipamentos' . $equipamentos .'.';
