@@ -17,6 +17,7 @@ body {
     height: 100vh;
     max-width: auto;
     max-height: auto;
+    text-align: 50% center;
 }
 @keyframes degrade-animado {
     0%{
@@ -28,45 +29,38 @@ body {
 }
 
 .cabecalho {
-    height: 110px;
     background-color: #000000;
     border-bottom: solid 5px #ff0000;
-    box-sizing: content-box;
-    position: relative;
 }
 .toggle a {
-    color: #000000;
-    background-color: #ff0000;
-    border: solid 1px #ff0000;
-    border-radius: 5px;
-    height: 40px;
-    padding: 10px 10px;
+    color: #ff0000;
     margin-left: 10px;
-    margin-top: 50px;
+    margin-top: 40px;
     position: absolute;
-    left: 10px;
+    left: 15px;
     top: 10px;
 }
 .menu{
-    display: block;
-    vertical-align: top;
     display: flex;
-    justify-content: center;
-    margin-right: 25%;
-    margin-top: 25px;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    padding: 0px;
 }
 .menu ul{
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: 0px;
     display: flex;
     align-items: center;
     justify-items: center;
 }
 .menu li{
-    display: inline-block;
-    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
     border: 0;
-    margin: 0 0 0 0;
+    margin: auto;
 }
 .menu a{
     text-decoration: none;
@@ -74,40 +68,46 @@ body {
 }
 .menu i{
     color:#ff0000;
-    padding: 10px;
-    margin-left: 60px;
-
+    margin-left: 100px;
+    margin-top: 30px;
+    margin-right: 50px;
+}
+@media (max-width: 680px){
+    .menu i{
+        margin-left: 10px;
+    }
 }
 
 .conta a{
     position: absolute;
-    top: 70px;
+    top: 50px;
     right: 10px;
     color: #ff0000;
 }
-li a img {
-    height: 20px;
-    width: 20px;
-}
+
 .video{
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 480px;
-    align-content: center;
-    height: 300px; 
-    
-     
+    margin: auto;
+    padding: 25px;
+    width: 700px;
+}
+@media (max-width: 680px){
+    .video{
+        width: 480px;
+}
 }
 p {
-    text-align: center;
+    text-indent: 30px;
+    text-align: left;
     color:#ffffff;
 }
 .encontraProduto {
     position: absolute;
-    top: 155px;
-    left: 90%;
-    transform: translate(-40%, -60%);
+    top: 148px;
+    left: 93%;
+    transform: translate(-60%, -40%);
     background: #000000;
     height: 40px;
     padding: 10px;
@@ -158,14 +158,8 @@ footer a{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display: flex;
-    margin: 50px 50px 0 120px;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    max-height: 100%;
-    width: 50%;
-    height: 50%; */
+    margin: auto;
+    width: 300px;
 }
 .container{
     width: 100%;
