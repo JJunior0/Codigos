@@ -31,8 +31,7 @@ if (mysqli_query($conexao, $sql)) {
 	echo 'Cadastro Inserido com sucesso!';
 } else {
 	//Não executou no BD
-	// echo mysqli_error($conexao);
-	echo 'Problemas com a Execusão!';
+	echo "Problemas com a Execusão!". mysqli_error($conexao);
 }
 
 //Fecha a conexão BD
