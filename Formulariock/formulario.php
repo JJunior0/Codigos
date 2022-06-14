@@ -15,15 +15,14 @@ $conexao = mysqli_connect($servidor, $usuario, $senha, $bdname, $porta);
 if (!$conexao) 
 {
 	die('Problemas com a conexão!' . mysqli_connect_error());
-	echo "Conexão efetuada com sucesso!"
+	echo "Conexão efetuada com sucesso!";
 }
 
 foreach ($equipe as $equipamentos)
 {
 	$msg .= $equipamentos . ", ";
+	echo 'Você tem os seguintes equipamentos' . $equipamentos .'.';
 }
-
-echo 'Você tem os seguintes equipamentos' . $equipamentos .'.';
 
 $sql = "INSERT INTO formulario VALUES (null,'$nome','$email','$equipamentos');";
 
