@@ -26,7 +26,7 @@ echo "Você tem os seguintes equipamentos: $msg";
 $sql = "INSERT INTO formulario VALUES (null,'$nome','$email','$msg');";
 
 
-if ($conexao->query($sql)) {
+if (mysqli_query($conexao, $sql)) {
 	//Executou no BD
 	echo 'Cadastro Inserido com sucesso!';
 } else {
