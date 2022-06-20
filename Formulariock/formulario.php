@@ -12,32 +12,26 @@ $porta = 3306;
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $bdname, $porta);
 
-if (!$conexao) 
-{
+if (!$conexao) {
 	die('Problemas com a conexão!' . mysqli_connect_error());
-	echo "Conexão efetuada com sucesso!"
+	echo "Conexão efetuada com sucesso!";
 }
 
-foreach ($equipe as $equipamentos)
-{
+foreach ($equipe as $equipamentos) {
 	$msg .= $equipamentos . ", ";
 }
 
-echo 'Você tem os seguintes equipamentos' . $equipamentos .'.';
+echo "Você tem os seguintes equipamentos: $msg";
 
-$sql = "INSERT INTO formulario VALUES (null,'$nome','$email','$equipamentos');";
+$sql = "INSERT INTO formulario VALUES (null,'$nome','$email','$msg');";
 
 
-if($conexao -> query($sql))
-{
+if (mysqli_query($conexao, $sql)) {
 	//Executou no BD
 	echo 'Cadastro Inserido com sucesso!';
-}
-else
-{
+} else {
 	//Não executou no BD
-	// echo mysqli_error($conexao);
-	echo 'Problemas com a Execusão!';
+	echo "Problemas com a Execusão!". mysqli_error($conexao);
 }
 
 //Fecha a conexão BD
