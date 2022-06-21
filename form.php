@@ -5,7 +5,7 @@ $email = $_POST['e-mail'];
 $senha = $_POST['senha'];
 $lembrar = $_POST['lembrar'];
 
-$conexao = mysqli_connect('localhost','root','root','formulario',3306);
+$conexao = mysqli_connect('localhost','root','','formulario',3306);
 
 if (!$conexao) 
 {
