@@ -37,7 +37,7 @@
 		</div>
 		<br>
 		<div>
-			<input type="submit" name="ok" value="Cadastrar" class="btn" onclick="return validacao()">
+			<input type="submit" name="ok" value="Cadastrar" id="btn" onclick="return validacao()">
 		</div>
 	</form>
 	<script type="text/javascript">
@@ -46,7 +46,6 @@
 				alert("Por favor, preencha o campo nome.")
 				return false
 			} else {
-				document.getElementsByClassName("btn").submit()
 				return true
 			}
 		}
