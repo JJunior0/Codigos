@@ -16,39 +16,62 @@
 		<br>
 		<div class="nome">
 			<label for="username">Nome:
-				<input type="text" name="username" id="name" placeholder="Nome" required>
+				<input type="text" name="username" id="name" class="obrigatorio" placeholder="Nome" required>
 			</label>
 		</div>
 		<br>
 		<div class="email">
 			<label for="e-mail">Email:
-				<input type="email" name="e-mail" id="email" placeholder="Email" required>
+				<input type="email" name="e-mail" id="email" class="obrigatorio" placeholder="Email" required>
 			</label>
 		</div>
 		<br>
 		<div><label for="lembrar">Selecione os seus Equipamentos de Acesso a Internet:</label>
 			<br>
-			<br> <input type="checkbox" name="equipe[0]" value="computador"> Computador
-			<br> <input type="checkbox" name="equipe[1]" value="smartphone"> Smartphones
-			<br> <input type="checkbox" name="equipe[2]" value="notebook"> Notebook
-			<br> <input type="checkbox" name="equipe[3]" value="tablet"> Tablet
-			<br> <input type="checkbox" name="equipe[4]" value="outros"> Outros
-			<br> <input type="checkbox" name="equipe[5]" value="nenhum"> Nenhum Equipamento
+			<br> <input type="checkbox" name="equipe[0]" value="computador" class="check"> Computador
+			<br> <input type="checkbox" name="equipe[1]" value="smartphone" class="check"> Smartphones
+			<br> <input type="checkbox" name="equipe[2]" value="notebook" class="check"> Notebook
+			<br> <input type="checkbox" name="equipe[3]" value="tablet" class="check"> Tablet
+			<br> <input type="checkbox" name="equipe[4]" value="outros" class="check"> Outros
+			<br> <input type="checkbox" name="equipe[5]" value="nenhum" class="check"> Nenhum Equipamento
 		</div>
 		<br>
 		<div>
-			<input type="submit" name="ok" value="Cadastrar" id="btn" onclick="return validacao()">
+			<input type="submit" name="ok" value="Cadastrar" id="btn" class="obrigatorio" onclick="return validacao()">
 		</div>
 	</form>
 	<script type="text/javascript">
 		function validacao() {
-			if (document.getElementById("name").length == 0) {
-				alert("Por favor, preencha o campo nome.")
-				return false
-			} else {
-				return true
+			var vazio = false
+			vazio = validacaoCheck()
+			var dados = document.getElementsByClassName('obrigatorio')
+			var tamanho = dados.length
+			for(var i = 0; i < tamanho; i++){
+				if(dados[i].value == ''){
+					vazio = true
+					break
+				}
+				if(vazio){
+					alert('Por favor, preencha todos os campos.')
+					return false
+				}else{
+					return true
+				}	
 			}
 		}
+		function validacaoCheck(){
+			var checkboxs = Array.from(document.querySelectorAll('.check'))
+			var verifica = checkboxs.filter(checkbox => checkbox.checked)
+			console.log (verifica.length)
+			if (verifica.length) {
+				return true
+			}else{
+				return false
+			}
+			
+		}
+		
+		
 
 	</script>
 </body>
