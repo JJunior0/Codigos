@@ -13,29 +13,39 @@
 	<form action="formulario.php" method="post" class="card">
 
 		<h1>Cadastro</h1>
-		<br>
+		
 		<div class="nome">
 			<label for="username">Nome:
 				<input type="text" name="username" id="name" class="obrigatorio" placeholder="Nome" required>
 			</label>
 		</div>
-		<br>
 		<div class="email">
 			<label for="e-mail">Email:
 				<input type="email" name="e-mail" id="email" class="obrigatorio" placeholder="Email" required>
 			</label>
 		</div>
-		<br>
-		<div><label for="lembrar">Selecione os seus Equipamentos de Acesso a Internet:</label>
-			<br>
-			<br> <input type="checkbox" name="equipe[0]" value="computador" class="check"> Computador
-			<br> <input type="checkbox" name="equipe[1]" value="smartphone" class="check"> Smartphones
-			<br> <input type="checkbox" name="equipe[2]" value="notebook" class="check"> Notebook
-			<br> <input type="checkbox" name="equipe[3]" value="tablet" class="check"> Tablet
-			<br> <input type="checkbox" name="equipe[4]" value="outros" class="check"> Outros
-			<br> <input type="checkbox" name="equipe[5]" value="nenhum" class="check"> Nenhum Equipamento
+		<div>
+			<p>Selecione os seus Equipamentos de Acesso a Internet:</p>
+			
+				<input type="checkbox" name="equipe[0]" value="computador" class="checks">
+				<label for="computador">Computador</label>
+			 
+				<input type="checkbox" name="equipe[1]" value="smartphone" class="checks">
+				<label for="smartphones">Smartphones</label>
+			
+				<input type="checkbox" name="equipe[2]" value="notebook" class="checks">
+				<label for="notebook">Notebook</label>
+
+				<input type="checkbox" name="equipe[3]" value="tablet" class="checks">
+				<label for="tablet">Tablet</label>
+
+			
+				<input type="checkbox" name="equipe[4]" value="outros" class="checks">
+				<label for="outros">Outros</label>
+			 
+				<input type="checkbox" name="equipe[5]" value="nenhum" class="checks">
+				<label for="nenhum">Nenhum Equipamento</label>
 		</div>
-		<br>
 		<div>
 			<input type="submit" name="ok" value="Cadastrar" id="btn" class="obrigatorio" onclick="return validacao()">
 		</div>
@@ -51,7 +61,7 @@
 					vazio = true
 					break
 				}
-				if(vazio){
+				else if(vazio){
 					alert('Por favor, preencha todos os campos.')
 					return false
 				}else{
@@ -60,20 +70,9 @@
 			}
 		}
 		function validacaoCheck(){
-			var checkboxs = Array.from(document.querySelectorAll('.check'))
+			var checkboxs = Array.from(document.querySelectorAll('.checks'))
 			var verifica = checkboxs.filter(checkbox => checkbox.checked)
-			console.log (verifica.length)
-			if (verifica.length) {
-				return true
-			}else{
-				return false
-			}
-			
 		}
-		
-		
-
 	</script>
 </body>
-
 </html>

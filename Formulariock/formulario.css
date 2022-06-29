@@ -25,20 +25,15 @@ form {
     flex-direction: column;
     justify-content: center;
     max-width: 500px;
-    margin: 0 auto;
+    margin: auto;
     height: 100vh;
-    width: 100vw;
-    
+    width: 100vw;    
 }
 input{
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
+    display: block;
 }
-label{
-    display: inline-block;
-    
-}
+
+
 .card{
     display: flex;
     justify-content: center;
@@ -50,14 +45,14 @@ label{
     border-radius: 100px;
 }
 div{
-    text-align: center;
-    
+    padding: 10px;
 }
 h1{
     text-align: center;
     background-color: #962121;
     width: 180px;
-    padding: 10px;
+    padding: 15px;
+    margin: 10px;
     border-radius: 20px;
 }
 #btn{
@@ -69,9 +64,5 @@ h1{
     border-radius: 150px;
     border: 0;
     padding: 5px;
-}
-.esqueceu{
-    text-decoration: none;
-    color: #fff;
 }
 
