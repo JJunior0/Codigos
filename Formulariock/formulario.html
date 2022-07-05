@@ -54,6 +54,10 @@
 		function validacao() {
 			var vazio = false
 			vazio = validacaoCheck()
+			function validacaoCheck(){
+			var checkboxs = Array.from(document.querySelectorAll('.checks'))
+			var verifica = checkboxs.filter(checkbox => checkbox.checked)
+			}
 			var dados = document.getElementsByClassName('obrigatorio')
 			var tamanho = dados.length
 			for(var i = 0; i < tamanho; i++){
@@ -69,10 +73,7 @@
 				}	
 			}
 		}
-		function validacaoCheck(){
-			var checkboxs = Array.from(document.querySelectorAll('.checks'))
-			var verifica = checkboxs.filter(checkbox => checkbox.checked)
-		}
+		
 	</script>
 </body>
 </html>
