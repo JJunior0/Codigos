@@ -1,7 +1,7 @@
 <?php
 $servidor = "br894.hostgator.com.br";
 $usuario = "mvpstudi_elektro";
-$bdname = "formulario";
+$bdname = "mvpstudio_cadastro_josedesouza";
 $senha = "ipi2022";
 $porta = 3306;
 
