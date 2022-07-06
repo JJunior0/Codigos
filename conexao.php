@@ -1,8 +1,8 @@
 <?php
-$servidor = "localhost";
-$usuario = "root";
+$servidor = "br894.hostgator.com.br";
+$usuario = "mvpstudi_elektro";
 $bdname = "formulario";
-$senha = "";
+$senha = "ipi2022";
 $porta = 3306;
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $bdname, $porta);
