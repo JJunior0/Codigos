@@ -5,12 +5,7 @@ $email = $_POST['e-mail'];
 $senha = $_POST['senha'];
 $lembrar = $_POST['lembrar'];
 
-$conexao = mysqli_connect('localhost','root','','formulario',3306);
-
-if (!$conexao) 
-{
-	die('Problemas com a conexão!');
-}
+include('conexao.php');
 
 $sql = "INSERT INTO formulario VALUES (null,'$nome','$email','$senha','$lembrar');";
 
